@@ -1,15 +1,25 @@
+//store
 import Vue from 'vue'
 import Vuex from 'vuex'
+
+import mutations from "./mutations"
+import actions from "./actions"
+import state from "./state"
+import getters from "./getters"
+
+import cart from "./modules/cart"
+import product from "./modules/product"
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
+  namespaced: true,
+  state,
+  mutations,
+  actions,
+  getters,
+  modules:{
+    cart,
+    product,
   },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
 })
